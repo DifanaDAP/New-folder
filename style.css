@@ -191,45 +191,71 @@ span{
     margin: 2rem 0 3rem;
 }
 
-.service{
-    margin-bottom: 5rem;
+/* Container dan Section */
+.skills-section {
+    padding: 4rem 2rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
-.service-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
+.skills-section h2{
+    margin-bottom: 4rem;
 }
 
-.service-container .service-box{
-    flex: 1 1 30rem;
-    background: var(--snd-bg-color);
-    padding: 3rem 2rem 4rem;
-    border-radius: 2rem;
+.skills-section h3{
+    font-size: 3rem;
     text-align: center;
-    border: .2rem solid var(--main-color);
-    transition: .5s ease;
 }
 
-.service-container .service-box:hover{
-    border-color: var(--main-color);
-    transform scale(1.02);
+/* Layout Grid untuk Desktop */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dua kolom yang sejajar */
+    gap: 2rem; /* Jarak antara kolom */
+    align-items: start;
 }
 
-.service-box i{
-    font-size: 7rem;
-    color: var(--main-color);
+.hard-skills, .soft-skills {
+    grid-column: span 1;
 }
 
-.service-box h3{
-    font-size: 2.6rem;
+/* Hard Skills */
+.hard-skills .skill-item {
+    margin-bottom: 1.5rem;
 }
 
-.service-box p{
-    font-size: 1.6rem;
-    margin: 1rem 0 3rem;
+.hard-skills .skill-item p {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 1rem;
+    background-color: var(--bg-color);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar .progress {
+    height: 100%;
+    background-color: var(--main-color);
+    transition: width 0.5s ease;
+}
+
+/* Soft Skills */
+.soft-skills {
+    grid-column: span 1;
+    display: grid;
+    gap: 1rem;
+}
+
+.soft-skills .soft-skill {
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--snd-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .portofolio{
@@ -510,8 +536,16 @@ span{
         margin-top: 4rem;
     }
 
-    .service h2{
-        margin-bottom: 3rem;
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .hard-skills, .soft-skills {
+        grid-column: span 1;
+    }
+
+    .soft-skills {
+        grid-template-columns: 1fr;
     }
 
     .portofolio h2{
